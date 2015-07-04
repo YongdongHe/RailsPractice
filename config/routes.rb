@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
   devise_for :people
   resources :users
 
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
   get 'activities/show'
 
   delete 'activities/destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
