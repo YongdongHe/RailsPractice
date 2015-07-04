@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :users
+
+  resources :microposts
+
+  get 'activities/new'
+
+  post 'activities/create'
+
+  get 'activities/edit'
+
+  post 'activities/updata'
+
+  get 'activities/show'
+
+  delete 'activities/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
