@@ -1,2 +1,17 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<%= stylesheet_link_tag    "application", :media =>
+	"all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %></head>
+<body>
+	<%= render 'layouts/test' %>
+	<%= render 'microposts/mtest' %>
+</body>
+</html> 
+
