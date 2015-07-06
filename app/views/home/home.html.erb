@@ -16,11 +16,11 @@
 			<a class="btn btn-default" href="/user/search" role="button" id="searchbtn" data-remote="true" data-method="post">6</a>
 		</form> -->
 		<div class="input-group">
-			<input id="searchedit" type="text" class="form-control" placeholder="uses' id you want to search" aria-describedby="basic-addon2">		
+			<input id="searchedit" type="text" class="form-control" placeholder="user's name you want to search" aria-describedby="basic-addon2">		
 			<span class="input-group-addon" id="basic-addon2">@example.com</span>
 		</div>
 		<div class="input-group">
-			<input id="searchresult" type="text" name="test" class="form-control" placeholder="username" aria-describedby="basic-addon2"></div>
+			<input id="searchresult" type="text" name="test" class="form-control" placeholder="user's email" aria-describedby="basic-addon2"></div>
 		<a class="btn btn-default" href="#" role="button" id="searchbtn" >search</a>
 		
 
@@ -34,25 +34,25 @@
 						url: '/user/search',
 						type: 'post',
 						dataType: 'text',
-						data: {user_id: content},
+						data: {user_name: content},
 						success: function(data , notice1){
 							/* body... */
 							var data_json=JSON.parse(data);
-							alert(data_json["json1"]);
-							console.log(data);
-							$("#searchresult").val(data);
-						}
-					})
-					.done(function() {
-						console.log("success");
-					})
-					.fail(function() {
-						console.log("error");
-					})
-					.always(function() {
-						console.log("complete");
-					});
+							if(data_json['status']=='success')
+							{
+								alert("查找成功");
+								console.log(data);
+								$("#searchresult").val(data_json['email']);
+							}
+							else
+							{
+								alert("查找失败");
+								console.log(data);
+								$("#searchresult").val('');
+							}
 							
+						}
+					})							
 			});
 		});
 		</script>

@@ -23,19 +23,17 @@ class UsersController < ApplicationController
 
   def search
     # @user_id = params[:test]
-    @user_id = params[:user_id]
-
-    u = User.find(@user_id)
-    data = {json1: 'ok',one: 'false'}
+    @user_name = params[:user_name]
+    u = User.find_by(:name => @user_name)
     respond_to do |format|
-      # if u
-      #   data = {'json'=>'json_data',:name => u.name ,id: @user_id , :status => 'success'}
-      #   format.json { render json: data }
-      # else
-      #   data = {:status => 'fail'}
-      #   format.json { render json: data}
-      # end
-      format.json { render json: data }
+      if u!=nil
+        data = {'json'=>'json_data',:name => u.name ,id: u.id,:email => u.email, :status => 'success'}
+        format.json { render json: data }
+      else
+        data = {:status => 'fail'}
+        format.json { render json: data}
+      end
+      # format.json { render json: data }
     end
 
     # respond_to do |format|
