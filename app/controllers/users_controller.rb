@@ -21,6 +21,17 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def search
+    @user_id = params[:test]
+    # u = User.find(user_id)
+    # respond_to do |format|
+    #   if u
+    # end
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create

@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
   root :to =>"home#home"
   # 或者使用 match "/" ,to: 'home#home' , via:'get'也可以达到相同的效果
-  get 'home/home'
+  get 'home/home' 
 
 #添加/help路由，转向static_pages#help，使得更简洁
 
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match '/help', to:'static_pages#help' , via: 'get'
   match '/home', to:'static_pages#home' , via: 'get'
   match '/test', to:'static_pages#testway' , via: 'get'
+  match '/user/search', to: 'users#search' , via: 'post' 
 
 
   devise_for :people
