@@ -16,11 +16,11 @@
 			<a class="btn btn-default" href="/user/search" role="button" id="searchbtn" data-remote="true" data-method="post">6</a>
 		</form> -->
 		<div class="input-group">
-			<input id="searchedit" type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">		
+			<input id="searchedit" type="text" class="form-control" placeholder="uses' id you want to search" aria-describedby="basic-addon2">		
 			<span class="input-group-addon" id="basic-addon2">@example.com</span>
 		</div>
 		<div class="input-group">
-			<input id="searchresult" type="text" name="test" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2"></div>
+			<input id="searchresult" type="text" name="test" class="form-control" placeholder="username" aria-describedby="basic-addon2"></div>
 		<a class="btn btn-default" href="#" role="button" id="searchbtn" >search</a>
 		
 
@@ -40,6 +40,14 @@
 							var data_json=JSON.parse(data);
 							console.log(data_json);
 							$("#searchresult").val(data_json["name"]);
+							// if(data_json['status']=='success')
+							// {
+								
+							// }
+							// else
+							// {
+							// 	console.log(data_json);
+							// }							
 						}
 					})
 					.done(function() {
