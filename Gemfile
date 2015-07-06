@@ -44,3 +44,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Use rspec for test 2015.7.4
 gem 'rspec-rails', '~> 3.0'
 
+# Use bcrypt-rubt to ecry the password
+gem 'bcrypt-ruby', '3.1.2'
+
