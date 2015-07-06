@@ -22,14 +22,16 @@ class UsersController < ApplicationController
   end
 
   def search
-    @user_id = params[:test]
-    # u = User.find(user_id)
-    # respond_to do |format|
-    #   if u
-    # end
+    # @user_id = params[:test]
+    @user_id = params[:user_id]
+    u = User.find(@user_id)
     respond_to do |format|
-      format.js
+      format.json { render json: u.name ,notice: 'User was successfully created.'}
     end
+
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   # POST /users
