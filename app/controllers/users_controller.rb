@@ -24,8 +24,9 @@ class UsersController < ApplicationController
   def search
     # @user_id = params[:test]
     @user_id = params[:user_id]
-    u = User.find(@user_id)  
-    data = {'json'=>'json_data',:name => u.name ,id: @user_id , :status => 'success'} 
+
+    u = User.find(@user_id)
+    data = {json1: 'ok',one: 'false'}
     respond_to do |format|
       # if u
       #   data = {'json'=>'json_data',:name => u.name ,id: @user_id , :status => 'success'}

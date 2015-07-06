@@ -38,16 +38,9 @@
 						success: function(data , notice1){
 							/* body... */
 							var data_json=JSON.parse(data);
-							console.log(data_json);
-							$("#searchresult").val(data_json["name"]);
-							// if(data_json['status']=='success')
-							// {
-								
-							// }
-							// else
-							// {
-							// 	console.log(data_json);
-							// }							
+							alert(data_json["json1"]);
+							console.log(data);
+							$("#searchresult").val(data);
 						}
 					})
 					.done(function() {
