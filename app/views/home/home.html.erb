@@ -38,9 +38,8 @@
 						success: function(data , notice1){
 							/* body... */
 							var data_json=JSON.parse(data);
-							alert(data_json["json1"]);
-							console.log(data);
-							$("#searchresult").val(data);
+							console.log(data_json);
+							$("#searchresult").val(data_json["name"]);
 						}
 					})
 					.done(function() {
