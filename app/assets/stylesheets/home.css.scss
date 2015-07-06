@@ -1,8 +1,13 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.navbar-brand{
-    color: #FFFFFF;
-
+.home-content-container{
+	h1{
+		float: left;
+  		margin-right: 10px;
+  		font-size: 1.7em;
+  		color: #000;
+  		text-transform: uppercase;
+  		letter-spacing: -1px;
+  		padding-top: 9px;
+  		font-weight: bold;
+  		line-height: 1;
+	}
 }

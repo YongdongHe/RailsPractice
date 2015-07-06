@@ -1,0 +1,61 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+/* header */
+.navbar 
+.navbar-fixed-top 
+.navbar-inverse {
+  background-color: #fff;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff; 
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover{
+    color: #555;
+  }
+}
+
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #555;
+  a{
+    color: #000;
+    &:hover{
+      color: #555;
+      background-color: #FFF;
+    }
+  }
+
+
+  small{
+    float: left;
+  }
+
+  ul{
+    float: right;
+    list-style: none;
+    li{
+      float: left;
+      margin-left: 10px;
+    }
+  }
+
+}
+
+
