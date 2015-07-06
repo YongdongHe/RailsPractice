@@ -25,8 +25,9 @@ class UsersController < ApplicationController
     # @user_id = params[:test]
     @user_id = params[:user_id]
     u = User.find(@user_id)
+    data = {json1: 'ok',one: 'false'}
     respond_to do |format|
-      format.json { render json: u.name ,notice: 'User was successfully created.'}
+      format.json { render json: data ,notice: 'User was successfully created.'}
     end
 
     # respond_to do |format|

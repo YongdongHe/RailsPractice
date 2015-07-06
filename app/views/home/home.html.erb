@@ -35,9 +35,10 @@
 						type: 'post',
 						dataType: 'text',
 						data: {user_id: content},
-						success: function(data , notice1,notice2){
+						success: function(data , notice1){
 							/* body... */
-							alert(notice1+notice2);
+							var data_json=JSON.parse(data);
+							alert(data_json["json1"]);
 							console.log(data);
 							$("#searchresult").val(data);
 						}
