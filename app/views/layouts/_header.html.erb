@@ -1,18 +1,27 @@
-<header class="navbar  navbar-inverse ">
-  <div class="navbar-inner home-navbar-container">
-    <div class="container">
-      <%= link_to "404 not found", home_home_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",    home_home_path %></li>
-        </ul>
-        <ul class="nav pull-right">
-          <li><%= link_to "Help",    static_pages_help_path %></li>
-        </ul>
-        <ul class="nav pull-right">
-          <li><%= link_to "Sign in", '#' %></li>
-        </ul>        
-      </nav>
+<div class="row">
+  <header class="navbar  navbar-inverse ">
+    <div class="navbar-inner home-navbar-container">
+      <div class="container">
+        <%= link_to "404 not found", home_home_path, id: "logo" %>
+        <nav>
+          <ul class="nav pull-right nav-btn-pullright">
+            <li>
+              <%= link_to "Home",    home_home_path %></li>
+          </ul>
+          <ul class="nav pull-right nav-btn-pullright">
+            <li>
+              <%= link_to "Help",    static_pages_help_path %></li>
+          </ul>
+          <ul class="nav pull-right nav-btn-pullright">
+            <li>
+              <%= link_to "Log in", new_person_session_path %></li>
+          </ul>
+          <ul class="nav pull-right nav-btn-pullright">
+            <li>
+              <%= link_to "Sign up", new_person_registration_path %></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>

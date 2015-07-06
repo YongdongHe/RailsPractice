@@ -17,4 +17,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ #searchedit, #searchresult{
+ 	width: 500px;
+ }
+
+ .title-content{
+ 	h1{
+ 		margin: 1% 45%;
+ 	}	
+ }
+
+ .main-content{
+ 	margin: 2% 25%;
+ }
+
+ .footer-content{
+ 	margin: 1% 36%;
+ }
+
+ #log_in_btn{
+ 	margin-top: 10px;
+ 	width: 100%;
+ }
+
 
