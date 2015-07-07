@@ -73,5 +73,19 @@
   margin-right: 10px;
 }
 
+//注册页面错误信息提示样式
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
  
 
