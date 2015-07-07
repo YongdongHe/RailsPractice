@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   match '/home', to:'static_pages#home' , via: 'get'
   match '/test', to:'static_pages#testway' , via: 'get'
   match '/user/search', to: 'users#search' , via: 'post' 
+  match '/signup' , to: 'users#new' , via: 'get'
 
 
   devise_for :people
