@@ -1,15 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<% provide(:title, @user.name) %>
+</div>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+	<div class="container col-md-5 main-content" id="info_show_name">
+		<h1>
+			<%= @user.name %>
+		</h1>
+		<%= gravatar_for @user %>		
+		<br>
+	</div>
+</div>
 
-<%= @user.name %> + <%= @user.password_digest %>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<%= @user.name %>
++
+<%= @user.password_digest %>
+<p> <strong>Name:</strong>
+	<%= @user.name %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p> <strong>Email:</strong>
+	<%= @user.email %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+|
 <%= link_to 'Back', users_path %>
