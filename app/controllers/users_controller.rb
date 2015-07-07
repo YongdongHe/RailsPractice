@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_create :create_remenber_token
-
   # GET /users
   # GET /users.json
   def index
@@ -84,14 +82,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def User.new_remenber_token
-    SecureRandom.urlsafe_base64
-  end
-
-  def User.hash(token)
-    Digest::SHA1.hexdigest(token.to_s)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -103,7 +93,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    def create_remenber_token
-      self.remenber_token = User.hash(User.new_remenber_token)
-    end
+
 end

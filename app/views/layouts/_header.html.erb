@@ -12,6 +12,31 @@
             <li>
               <%= link_to "Help",  static_pages_help_path %></li>
           </ul>
+
+          <!-- User写的登陆和注册 -->
+          <% if signed_in? %>
+            <li>
+              <%= link_to "Users", '#' %>
+            </li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Profile", current_user %>
+                </li>
+                <li>
+                  <%= link_to "Settings", '#' %>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
           <ul class="nav pull-right nav-btn-pullright">
             <li>
               <%= link_to "Peolpe Log in", new_person_session_path %></li>
@@ -20,6 +45,9 @@
             <li>
               <%= link_to "People Sign up", new_person_registration_path %></li>
           </ul>
+          <% end %>
+
+          <!-- devise自动生成的登陆和注册 -->
           <ul class="nav pull-right nav-btn-pullright">
             <li>
               <%= link_to "User Sign in", new_session_path %></li>
