@@ -47,3 +47,6 @@ gem 'rspec-rails', '~> 3.0'
 # Use bcrypt-rubt to ecry the password
 gem 'bcrypt-ruby', '3.1.2'
 
+# Use prtected_attributes to call the attr_accessible method
+gem 'protected_attributes'
+
