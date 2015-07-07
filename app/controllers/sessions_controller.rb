@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 			#密码正确
 			flash.now[:success] = '登陆成功'
 			#下面的还未定义
-			sign_up user
+			sign_in user
 			redirect_to user
 
 		else
@@ -22,5 +22,5 @@ class SessionsController < ApplicationController
 
 	def destroy
 	end
-	
+
 end
