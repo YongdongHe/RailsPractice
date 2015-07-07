@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	
 	def create
 		render 'new'
 		user_email = :params[:session][:email]
@@ -21,4 +22,5 @@ class SessionsController < ApplicationController
 
 	def destroy
 	end
+	
 end
