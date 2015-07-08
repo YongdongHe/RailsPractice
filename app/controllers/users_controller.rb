@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user , only: [:edit, :update , :show]
-  # GET /users
+  before_action :signed_in_user , only: [:edit, :update ]
+  before_action :correct_user , only: [:edit, :update ]
+  
   # GET /users.json
   def index
     @users = User.all
@@ -101,6 +102,14 @@ class UsersController < ApplicationController
       flash[:notice] = "Please sign in."
       redirect_to signin_url
      end
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      if current_user?(@user)
+      else
+        redirect_to root_path
+      end          
     end
 
 
