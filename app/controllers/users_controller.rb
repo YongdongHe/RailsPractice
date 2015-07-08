@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user , only: [:edit, :update , :show]
   # GET /users
   # GET /users.json
   def index
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   def search
@@ -91,6 +93,14 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def signed_in_user
+     if signed_in?
+     else
+      flash[:notice] = "Please sign in."
+      redirect_to signin_url
+     end
     end
 
 
