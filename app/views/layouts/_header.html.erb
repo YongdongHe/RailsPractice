@@ -1,6 +1,6 @@
 <div class="row">
   <header class="navbar  navbar-inverse ">
-    <div class="navbar-inner home-navbar-container">
+    <div class="navbar-inner ">
       <div class="container">
         <%= link_to "404 not found", home_home_path, id: "logo" %>
         <nav>
@@ -15,9 +15,12 @@
 
           <!-- User写的登陆和注册 -->
           <% if signed_in? %>
+          <ul class="nav pull-right nav-btn-pullright">
             <li>
               <%= link_to "Users", '#' %>
             </li>
+          </ul>
+          <ul class="nav pull-right nav-btn-pullright">
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -36,7 +39,11 @@
                 </li>
               </ul>
             </li>
+          </ul>
+            
+            
           <% else %>
+
           <ul class="nav pull-right nav-btn-pullright">
             <li>
               <%= link_to "User Sign in", new_session_path %></li>
@@ -45,6 +52,7 @@
             <li>
               <%= link_to "User Sign up", new_user_path %></li>
           </ul>
+          
           <% end %>
 
           <!-- devise自动生成的登陆和注册 -->
