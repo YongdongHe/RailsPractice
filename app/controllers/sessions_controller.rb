@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
 			flash.now[:success] = '登陆成功'
 			#下面的还未定义
 			sign_in user
-			puts user
-			redirect_to user
+			# redirect_to user
+			# 修改为登陆后转向之前访问的地址
+			redirect_back_or user
 		else
 			flash.now[:error] = '登陆失败'
 			render 'new'	
@@ -22,5 +23,4 @@ class SessionsController < ApplicationController
 		sign_out
 		redirect_to root_path
 	end
-
 end

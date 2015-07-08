@@ -97,20 +97,31 @@ class UsersController < ApplicationController
     end
 
     def signed_in_user
-     if signed_in?
-     else
-      flash[:notice] = "Please sign in."
-      redirect_to signin_url
-     end
+      # if signed_in?
+      # else
+      #   store_location
+      #   flash[:notice] = "Please sign in."
+      #   redirect_to signin_url
+      # end
+      unless signed_in?
+        store_location
+        flash[:notice] = "Please sign in."
+        redirect_to signin_url
+      end
     end
 
     def correct_user
       @user = User.find(params[:id])
-      if current_user?(@user)
-      else
-        redirect_to root_path
-      end          
+      unless current_user?(@user)
+        redirect_to (root_path) 
+      end
     end
 
-
+    # def correct_user
+    #   @user = User.find(params[:id])
+    #   if current_user?(@user)
+    #   else
+    #     redirect_to root_path
+    #   end          
+    # end
 end
