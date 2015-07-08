@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   match '/user/search', to: 'users#search' , via: 'post' 
   match '/signup' , to: 'users#new' , via: 'get'
 
+  # match '/sessions/person' , to: 'devise/sessions#create' ,via: 'post'
+  get '/sessions/person'
+
 
   devise_for :people
   resources :users
