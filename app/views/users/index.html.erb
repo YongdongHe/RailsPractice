@@ -2,7 +2,7 @@
 <div class="title-content">
   <h1>Listing users</h1>
 </div>
-
+<!--
 <%= will_paginate %>
 
 <% @users.each do |user| %>
@@ -25,3 +25,12 @@
 <%= will_paginate %>
 
 <%= link_to 'New User', new_user_path %>
+-->
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+  <%= render user %>
+  <% end %></ul>
+
+<%= will_paginate %>

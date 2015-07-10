@@ -7,26 +7,10 @@
 
 <div class="row">
   <div class="container col-md-6 main-content">
-    <%= form_for(@user) do |f| %> 
-    <%= render 'shared/error_messages' %>   
-    <div class="form-gourp">
-    	<%= f.label :name %>
-    	<br>    
-    	<%= f.text_field :name ,:class =>"form-control"%></div>
-    <div class="form-gourp">
-    	<%= f.label :email %>    
-    	<br>
-    	<%= f.text_field :email,:class =>"form-control" %></div>
-    <div class="form-gourp">
-    	<%= f.label :password %>   
-    	<br>
-    	<%= f.password_field :password,:class =>"form-control" %></div>
-    <div class="form-gourp">
-    	<%= f.label :password_confirmation, "Confirmation" %>   
-    	<br> 
-    	<%= f.password_field :password_confirmation ,:class =>"form-control"%></div>
-    <div class="form-gourp" >
-    	<%= f.submit "Create my account", class: "form-control btn btn-large btn-primary" %></div>
+    <%= form_for(@user) do |field| %> 
+        <%= render 'fields',:f =>field %>
+        <br>
+        <%= field.submit "Create my account", class: "form-control btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

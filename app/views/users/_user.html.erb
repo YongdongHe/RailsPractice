@@ -1,0 +1,9 @@
+<div class="row">
+	<li>
+		<%= gravatar_for user, size: 52 %>
+		<%= link_to user.name, user %>
+		<%if current_user.admin? && !current_user?(user) %><!-- 后面这句是为了防止把自己删除了-->
+			| <%= link_to "delete",  user , method: :delete , date:{confirm: "You sure?"} %>
+		<% end %>
+	</li>
+</div>

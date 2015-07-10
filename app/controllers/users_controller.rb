@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user , only: [:edit, :update, :index ]
   before_action :correct_user , only: [:edit, :update ]
+  before_action :admin_user, only: [:destroy]
   
   # GET /users.json
   def index
@@ -80,8 +81,9 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
+    flash[:success]="User destroyed"
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.'}
       format.json { head :no_content }
     end
   end
@@ -125,4 +127,8 @@ class UsersController < ApplicationController
     #     redirect_to root_path
     #   end          
     # end
+
+    def admin_user
+      redirect_to root_path unless current_user.admin?
+    end
 end
