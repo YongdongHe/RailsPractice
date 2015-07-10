@@ -5,7 +5,7 @@ namespace :db do
     #              email: "example@railstutorial.org",
     #              password: "foobar",
     #              password_confirmation: "foobar")
-    50.times do |n|
+    5.times do |n|
       if n==0
         name = 'Me'
         email = 'heyongdonghe@qq.com'
@@ -24,6 +24,12 @@ namespace :db do
                     password: password,
                     password_confirmation: password)
       end  
+    end
+
+    users = User.all
+    40.times do
+      content = Faker::Lorem.sentence(5)
+      users.each { |user| user.microposts.create!(content: content) }
     end
   end
 end
