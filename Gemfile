@@ -51,3 +51,8 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'protected_attributes'
 # Use gem faker to create example user
 gem 'faker', '1.1.2'
+
+# Use paginate to make pages
+gem 'will_paginate', '3.0.4'
+
+gem 'bootstrap-will_paginate', '0.0.9'
