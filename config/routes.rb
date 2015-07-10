@@ -1,7 +1,6 @@
 
 Rails.application.routes.draw do
 
-
   root :to =>"home#home"
   # 或者使用 match "/" ,to: 'home#home' , via:'get'也可以达到相同的效果
   get 'home/home' 
