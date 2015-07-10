@@ -50,4 +50,4 @@ gem 'bcrypt-ruby', '3.1.2'
 # Use prtected_attributes to call the attr_accessible method
 gem 'protected_attributes'
 # Use gem faker to create example user
-gem 'faker'
+gem 'faker', '1.1.2'
