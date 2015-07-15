@@ -26,7 +26,13 @@ Rails.application.routes.draw do
 
 
   devise_for :people
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships, only: [:create, :destroy]
   resources :microposts
   resources :sessions, only: [:new , :create , :destroy]
   match '/signin',  to: 'sessions#new',         via: 'get'

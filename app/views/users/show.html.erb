@@ -24,6 +24,14 @@
 	</div>
 </div>
 
+<section>
+	<%= render 'shared/stats' %>
+</section>
+
+<div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+  </div>
+
 <div class="row">
 	 <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -39,10 +47,15 @@
 +
 <%= @user.password_digest %>
 <p> <strong>Name:</strong>
-	<%= @user.name %></p>
+	<%= @user.name %>
+</p>
 
 <p> <strong>Email:</strong>
-	<%= @user.email %></p>
+	<%= @user.email %>
+</p>
+
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 |

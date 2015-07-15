@@ -40,12 +40,12 @@ namespace :db do
       users.each { |user| user.microposts.create!(content: content) }
     end
   end
-
+  
   def make_relationships
     users = User.all
-    user = users.first
-    followed_users =  users[2..4]
-    followers = users[3]
+    user  = users.first
+    followed_users = users[2..4]
+    followers      = users[3..4]
     followed_users.each { |followed| user.follow!(followed) }
     followers.each      { |follower| follower.follow!(user) }
   end
